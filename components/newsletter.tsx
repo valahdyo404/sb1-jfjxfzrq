@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useToast } from '@/components/ui/use-toast';
+// import { useToast } from '@/components/ui/use-toast';
 
 export function Newsletter() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,17 +18,17 @@ export function Newsletter() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      toast({
-        title: "Thank you for subscribing!",
-        description: "You'll receive our newsletter with Islamic knowledge and updates.",
-      });
+      // toast({
+      //   title: "Thank you for subscribing!",
+      //   description: "You'll receive our newsletter with Islamic knowledge and updates.",
+      // });
       setEmail('');
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Error",
+      //   description: "Something went wrong. Please try again.",
+      //   variant: "destructive",
+      // });
     } finally {
       setIsLoading(false);
     }
